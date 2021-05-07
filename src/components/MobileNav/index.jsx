@@ -29,8 +29,8 @@ export default function MobileNav() {
         size="lg"
         icon={<RiMenuFill />}
         position="fixed"
-        bottom="2"
-        left="2"
+        bottom="4"
+        left="4"
         onClick={onOpen}
       />
       <Drawer
@@ -43,7 +43,7 @@ export default function MobileNav() {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader></DrawerHeader>
-          <DrawerBody>
+          <DrawerBody mb="3">
             <List spacing={8} textAlign="center">
               <ListItem>
                 <a href="#projects">
