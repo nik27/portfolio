@@ -1,0 +1,167 @@
+.page {
+  --gray-rgb: 255, 255, 255;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+  display: grid;
+  grid-template-rows: 1fr 20px;
+  align-items: center;
+  justify-items: center;
+  min-height: 100svh;
+  padding: 80px;
+  gap: 64px;
+  font-family: var(--font-geist-sans);
+
+  background-image: radial-gradient(circle 815px at 23.4% -21.8%, #091d55 0.2%, #000000 100.2%);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  grid-row-start: 1;
+}
+
+.info {
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.footer {
+  grid-row-start: 2;
+  display: flex;
+  gap: 24px;
+}
+
+.footer a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer img {
+  flex-shrink: 0;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 32px;
+    padding-bottom: 80px;
+  }
+
+  .main {
+    align-items: center;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.logo {
+  filter: invert();
+}
+
+.empty-icon-container {
+  margin: 1em auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animation-container {
+  position: relative;
+  display: block;
+  text-align: center;
+  height: 160px;
+  width: 400px;
+  border-bottom: solid 2px #fff;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+.bounce {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-left: -20px;
+  background-size: contain;
+  animation: bounceAnim 1s cubic-bezier(.63, .09, .75, .46) infinite alternate,
+    spinAnim 3s linear infinite;
+}
+
+@keyframes bounceAnim {
+
+  0%,
+  10% {
+    bottom: 50%;
+  }
+
+  100% {
+    bottom: 0%;
+  }
+}
+
+@keyframes spinAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pebble1 {
+  position: absolute;
+  top: 95%;
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 20px 20px 0px 0px;
+  animation: pebblesAnim 3s linear infinite;
+}
+
+.pebble2 {
+  position: absolute;
+  top: 97%;
+  background-color: #fff;
+  width: 5px;
+  height: 5px;
+  border-radius: 10px 10px 0px 0px;
+  animation: pebblesAnim 4s linear infinite;
+}
+
+.pebble3 {
+  position: absolute;
+  top: 98%;
+  background-color: #fff;
+  width: 3px;
+  height: 3px;
+  border-radius: 20px 20px 0px 0px;
+  animation: pebblesAnim 5s linear infinite;
+}
+
+@keyframes pebblesAnim {
+  0% {
+    right: -20%;
+  }
+
+  100% {
+    right: 110%;
+  }
+}
